@@ -45,7 +45,7 @@ public class AccountService {
             
             String to = user.getEmail();
             String subject = "Notes App password";
-            String template = path + "/emailtemplates/login.html";
+            String template = path + "/emailtemplates/password.html";
             
             HashMap<String, String> tags = new HashMap<>();
             tags.put("firstname", user.getFirstName());
@@ -54,6 +54,7 @@ public class AccountService {
             tags.put("password", user.getPassword());
             
             GmailService.sendMail(to, subject, template, tags);
+            
             return true;
         } catch (Exception ex) {   
         }

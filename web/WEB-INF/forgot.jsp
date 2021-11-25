@@ -12,10 +12,11 @@
         <title>Lab11</title>
     </head>
     <body>
-        <form>
+        <form method="POST" action="forgot">
             <h1>Forgot Password</h1>
             <p>Please enter your email address to retrieve your password.</p>
-            Email Address:<input name="email">
+            Email Address:<input name="email"> 
+            <br>
             <input type="submit" value="Submit">
             <input type="hidden" name="action" value="forgot">
             <p>${emailSent}</p>
