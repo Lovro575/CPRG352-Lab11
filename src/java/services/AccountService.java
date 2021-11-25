@@ -1,7 +1,6 @@
 package services;
 
 import dataaccess.UserDB;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,5 +35,28 @@ public class AccountService {
         }
 
         return null;
+    }
+    
+    public boolean forgotPassword(String email, String path) {
+        
+        try {
+            UserDB userDB = new UserDB();
+            User user = userDB.get(email);
+            
+            String to = user.getEmail();
+            String subject = "Notes App password";
+            String template = path + "/emailtemplates/login.html";
+            
+            HashMap<String, String> tags = new HashMap<>();
+            tags.put("firstname", user.getFirstName());
+            tags.put("lastname", user.getLastName());
+            tags.put("email", user.getEmail());
+            tags.put("password", user.getPassword());
+            
+            GmailService.sendMail(to, subject, template, tags);
+            return true;
+        } catch (Exception ex) {   
+        }
+        return false;
     }
 }
