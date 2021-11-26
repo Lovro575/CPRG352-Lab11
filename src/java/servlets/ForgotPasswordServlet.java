@@ -32,8 +32,6 @@ public class ForgotPasswordServlet extends HttpServlet {
         String path = getServletContext().getRealPath("/WEB-INF");
         String action = request.getParameter("action");
         String email = request.getParameter("email");
-        User user = new User();
-        user.setEmail(email);
         
         switch(action) {
             case "forgot":
