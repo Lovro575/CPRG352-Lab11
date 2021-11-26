@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.User;
 import services.AccountService;
 
 /**
@@ -28,9 +29,11 @@ public class ForgotPasswordServlet extends HttpServlet {
         
         AccountService as = new AccountService();
         
-        String path = getServletContext().getRealPath("WEB-INF");
+        String path = getServletContext().getRealPath("/WEB-INF");
         String action = request.getParameter("action");
         String email = request.getParameter("email");
+        User user = new User();
+        user.setEmail(email);
         
         switch(action) {
             case "forgot":
@@ -38,6 +41,7 @@ public class ForgotPasswordServlet extends HttpServlet {
                 request.setAttribute("If the address you entered is valid, you will receive an email very soon. \n Please check your email for your password.", "emailSent");
                 break;
         }
+        request.getServletContext().getRequestDispatcher("/WEB-INF/forgot.jsp").forward(request, response);
     }
 
 }

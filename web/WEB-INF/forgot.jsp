@@ -19,6 +19,9 @@
             <br>
             <input type="submit" value="Submit">
             <input type="hidden" name="action" value="forgot">
+            <br>
+            <a href="login">Cancel</a>
+            <br>
             <p>${emailSent}</p>
         </form>
     </body>

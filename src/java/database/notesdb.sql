@@ -42,8 +42,8 @@ INSERT INTO `user` (`email`,`active`,`first_name`,`last_name`,`password`,`role`)
 	VALUES ('cprgweb352+barb@gmail.com', true, 'Barb','Barber', 'password', 2);
 
 INSERT INTO `note` (`Title`, `Contents`, `Owner`)
-    VALUES ('Quote #1', 'Writing is nature''s way of letting you know how sloppy your thinking is.', 'cprgweb352@gmail.com');
+    VALUES ('Quote #1', 'Writing is nature''s way of letting you know how sloppy your thinking is.', 'cprgweb352+admin@gmail.com');
 INSERT INTO `note` (`Title`, `Contents`, `Owner`)
-    VALUES ('Another quote', '"Java is to JavaScript as ham is to hamster." -  Jeremy Keith', 'cprgweb352@gmail.com');
+    VALUES ('Another quote', '"Java is to JavaScript as ham is to hamster." -  Jeremy Keith', 'cprgweb352+anne@gmail.com');
 INSERT INTO `note` (`Title`, `Contents`, `Owner`)
-    VALUES ('Barb''s Note', 'Anne should not see this note.', 'cprgweb352@gmail.com');
+    VALUES ('Barb''s Note', 'Anne should not see this note.', 'cprgweb352+barb@gmail.com');
